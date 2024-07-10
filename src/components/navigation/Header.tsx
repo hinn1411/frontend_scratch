@@ -5,6 +5,7 @@ import SearchButton from "../search/SearchButton";
 import ThemeSwitch from "../theme/ThemeSwitch";
 import { paths } from "@/utils/paths";
 import LanguageSwitch from "../languageswitch";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
@@ -15,7 +16,17 @@ export default function Header() {
           href={paths.home()}
           className="flex items-center justify-center gap-2"
         >
-          <Image src="/images/logo.png" alt="app logo" width={40} height={40} />
+          <Image
+            src="/images/logo.png"
+            alt="app logo"
+            style={{
+              width: "auto",
+              height: "auto",
+            }}
+            width={40}
+            height={40}
+            className="overflow-hidden"
+          />
           <p className="text-2xl font-semibold cursor-pointer hidden sm:block">
             Frontend Scratch
           </p>
@@ -29,10 +40,11 @@ export default function Header() {
           ))}
         </ul>
         {/* Btns container */}
-        <div className="flex items-center gap-4 leading-5">
+        <div className="flex items-center gap-4">
           <SearchButton />
-          <ThemeSwitch />   
+          <ThemeSwitch />
           <LanguageSwitch />
+          <MobileNav />
         </div>
       </div>
     </header>

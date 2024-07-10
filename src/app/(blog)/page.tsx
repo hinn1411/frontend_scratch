@@ -1,6 +1,8 @@
 import { CustomLink } from "@/components/mdxcomponents";
-import Tag from "@/components/tag";
+import NewLetterForm from "@/components/newletter/NewLetterForm";
+import { PostTag } from "@/components/tag";
 import { paths } from "@/utils/paths";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -46,7 +48,7 @@ export default function HomePage() {
                         <ul className="flex flex-wrap">
                           {["html", "css", "responsive"].map((tag, index) => (
                             <li key={index}>
-                              <Tag text={tag} />
+                              <PostTag text={tag} />
                             </li>
                           ))}
                         </ul>
@@ -75,6 +77,17 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+      </div>
+      <div className="flex justify-end text-base font-medium leading-6">
+        <Link
+          className="text-lg text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          href={paths.viewAllPosts()}
+        >
+          All post &rarr;
+        </Link>
+      </div>
+      <div className="flex items-center justify-center pt-4">
+        <NewLetterForm />
       </div>
     </main>
   );

@@ -14,6 +14,9 @@ export const paths = {
   challenges() {
     return "/challenges";
   },
+  about() {
+    return "/about";
+  },
   viewAllPosts() {
     return `/posts`;
   },

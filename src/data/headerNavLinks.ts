@@ -6,4 +6,5 @@ export const headerNavLinks = [
   { href: paths.tips(), title: "Tips" },
   { href: paths.trends(), title: "Trends" },
   { href: paths.challenges(), title: "Challenges" },
+  { href: paths.about(), title: "About" },
 ];

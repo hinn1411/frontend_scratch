@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SocialIcon from "../social-icons";
 import Image from "next/image";
+import NewLetterForm from "../newletter/NewLetterForm";
 
 export default function Footer() {
   return (
