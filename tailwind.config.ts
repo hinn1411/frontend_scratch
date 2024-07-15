@@ -11,6 +11,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      lineHeight: {
+        11: "2.75rem",
+        12: "3rem",
+        13: "3.25rem",
+        14: "3.5rem",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
