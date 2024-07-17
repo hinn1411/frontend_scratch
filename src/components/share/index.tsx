@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import SocialIcon from "../social-icons";
+import SocialIcon from "../icons";
 
 interface ShareProps {
   className?: string;

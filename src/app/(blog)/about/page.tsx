@@ -1,5 +1,5 @@
 import PageTitle from "@/components/PageTitle";
-import SocialIcon from "@/components/social-icons";
+import SocialIcon from "@/components/icons";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -36,11 +36,10 @@ export default function AboutPage() {
           </div>
           <div className="flex flex-col space-y-4 prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2 text-gray-500 dark:text-gray-400">
             <p>
-              I am a final-year student and I have a strong passion for
-              Frontend Development. Currently, I am looking for a Frontend
-              Engineer role based in Vietnam. However, roles relating to Backend
-              Development are fine for me. Additionally, you can see my works
-              at{" "}
+              I am a final-year student and I have a strong passion for Frontend
+              Development. Currently, I am looking for a Frontend Engineer role
+              based in Vietnam. However, roles relating to Backend Development
+              are fine for me. Additionally, you can see my works at{" "}
               <span className="font-semibold text-primary-600 dark:text-primary-500">
                 https://hinn1411.github.io/threejs-portfolio/
               </span>
@@ -57,9 +56,13 @@ export default function AboutPage() {
                 hiengiang2822@gmail.com
               </span>{" "}
               or{" "}
-              <span className="font-semibold text-primary-600 dark:text-primary-500">
-                https://www.facebook.com/tuanhien.giang.9/
-              </span>
+              <a
+                href="https://www.facebook.com/tuanhien.giang.9"
+                target="_blank"
+                className="font-semibold text-primary-600 dark:text-primary-500"
+              >
+                https://www.facebook.com/tuanhien.giang.9
+              </a>
             </p>
           </div>
         </div>

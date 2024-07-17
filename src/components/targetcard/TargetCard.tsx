@@ -6,7 +6,7 @@ import CardTitle from "./CardTitle";
 interface TargetCardProps {}
 const TargetCard = ({}: TargetCardProps) => {
   return (
-    <CardContainer className="mb-4 p-6">
+    <CardContainer className="mb-4 p-6 dark:bg-gray-900">
       <CardHeader>
         <CardTitle>What you will gain</CardTitle>
       </CardHeader>

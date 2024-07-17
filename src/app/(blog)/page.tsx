@@ -1,4 +1,3 @@
-import { CustomLink } from "@/components/mdxcomponents";
 import NewLetterForm from "@/components/newletter/NewLetterForm";
 import { PostTag } from "@/components/tag";
 import { paths } from "@/utils/paths";
@@ -36,13 +35,13 @@ export default function HomePage() {
                       <div>
                         {/* Post Title */}
                         <div className="text-2xl font-bold leading-8 tracking-tight">
-                          <CustomLink
+                          <Link
                             href={`/posts/how-to-create-image-slide`}
                             aria-label="???"
                             className="text-gray-900 dark:text-gray-100"
                           >
                             <h2>How to create Image slide?</h2>
-                          </CustomLink>
+                          </Link>
                         </div>
                         {/* Tags */}
                         <ul className="flex flex-wrap">
@@ -63,12 +62,12 @@ export default function HomePage() {
                       </div>
                       {/* View details button */}
                       <div className="text-base font-medium leading-6">
-                        <CustomLink
+                        <Link
                           href={paths.viewPost("slug")}
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                         >
                           Read more &rarr;
-                        </CustomLink>
+                        </Link>
                       </div>
                     </div>
                   </div>

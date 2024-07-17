@@ -1,6 +1,7 @@
 import { Comments, WalineComments } from "@/components/comment";
 import CommentForm from "@/components/comment/CommentForm";
 import CommentList from "@/components/comment/CommentList";
+import { components } from "@/components/mdxcomponents";
 import PageTitle from "@/components/PageTitle";
 import ScrollToTopAndComment from "@/components/scroll";
 import SectionContainer from "@/components/SectionContainer";
@@ -11,9 +12,14 @@ import TargetCard from "@/components/targetcard/TargetCard";
 import { paths } from "@/utils/paths";
 import Image from "next/image";
 import Link from "next/link";
-
+import { MDXLayoutRenderer } from "pliny/mdx-components.js";
+// Style
+import "@/styles/prism.css"
+// Data
+import { allBlogs } from "contentlayer/generated";
 
 export default function PostPage() {
+  const post = allBlogs[0];
   return (
     <>
       <ScrollToTopAndComment />
@@ -86,11 +92,12 @@ export default function PostPage() {
                 <div className="not-prose mt-4">
                   <TargetCard />
                 </div>
-
+                {/* Blog content  */}
                 <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">
-                  <code>
+                  {/* <code>
                     Main content, including Outline, Content and References
-                  </code>
+                  </code> */}
+                  <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
                 </div>
                 <Share />
                 {/* Comment  */}
@@ -100,7 +107,6 @@ export default function PostPage() {
                 </div>
               </div>
               <footer>
-          
                 <div className="divide-y divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                   {/* Tags container */}
                   <div className="py-4 xl:py-8">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SocialIcon from "../social-icons";
+import SocialIcon from "../icons";
 import Image from "next/image";
 import NewLetterForm from "../newletter/NewLetterForm";
 

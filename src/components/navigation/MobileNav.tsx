@@ -1,7 +1,7 @@
 "use client";
 
 import { headerNavLinks } from "@/data/headerNavLinks";
-import { CustomLink } from "../mdxcomponents";
+import Link from "next/link";
 import { SVGProps, useState } from "react";
 
 export function ChevronDownIcon({
@@ -83,13 +83,13 @@ const MobileNav = () => {
         <nav className="fixed mt-8 h-full">
           {headerNavLinks.map((link, index) => (
             <div className="px-12 py-4" key={index}>
-              <CustomLink
+              <Link
                 onClick={handleToggleNav}
                 className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
                 href={link.href}
               >
                 {link.title}
-              </CustomLink>
+              </Link>
             </div>
           ))}
         </nav>
