@@ -33,3 +33,27 @@ export const paths = {
     return "/notifications";
   },
 };
+
+export const adminPaths = {
+  home() {
+    return "/admin";
+  },
+  allPosts() {
+    return "/admin/posts";
+  },
+  viewPost(postId: string) {
+    return `/admin/posts/${postId}`;
+  },
+  viewers() {
+    return "/admin/viewers";
+  },
+  dashboard() {
+    return "/admin/dashboard";
+  },
+  analytics() {
+    return "/admin/analytics";
+  },
+  settings() {
+    return "/admin/settings";
+  },
+};

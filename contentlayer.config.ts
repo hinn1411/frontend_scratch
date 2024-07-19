@@ -134,7 +134,7 @@ export const Blog = defineDocumentType(() => ({
     featured: { type: "boolean" },
     draft: { type: "boolean" },
     summary: { type: "string" },
-    images: { type: "json" },
+    images: { type: "json", default: [] },
     authors: { type: "list", of: { type: "string" }, required: true },
     layout: { type: "string" },
     bibliography: { type: "string" },
@@ -152,7 +152,7 @@ export const Blog = defineDocumentType(() => ({
         datePublished: doc.date,
         dateModified: doc.lastmod || doc.date,
         description: doc.summary,
-        image: doc.images || doc.images[0],
+        image: doc.images || doc.images[0] || "noImg",
         // image: doc.images ? doc.images[0] : siteMetadata.socialBanner,
         url: `???`,
         // url: `${siteMetadata.siteUrl}/${doc.language}/blog/${doc.slug}`,
@@ -213,8 +213,6 @@ export default makeSource({
     ],
   },
   onSuccess: async (importData) => {
-    
-    
     const { allBlogs } = await importData();
     // console.log("Imported Blogs:", allBlogs);
     createTagCount(allBlogs);

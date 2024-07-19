@@ -1,4 +1,4 @@
-import { Comments, WalineComments } from "@/components/comment";
+
 import CommentForm from "@/components/comment/CommentForm";
 import CommentList from "@/components/comment/CommentList";
 import { components } from "@/components/mdxcomponents";
@@ -14,7 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MDXLayoutRenderer } from "pliny/mdx-components.js";
 // Style
-import "@/styles/prism.css"
+import "@/styles/blogContent.css";
 // Data
 import { allBlogs } from "contentlayer/generated";
 
@@ -97,7 +97,11 @@ export default function PostPage() {
                   {/* <code>
                     Main content, including Outline, Content and References
                   </code> */}
-                  <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
+                  <MDXLayoutRenderer
+                    code={post.body.code}
+                    components={components}
+                    toc={post.toc}
+                  />
                 </div>
                 <Share />
                 {/* Comment  */}
