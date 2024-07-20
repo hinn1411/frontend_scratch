@@ -1,7 +1,7 @@
 import PostsTable from "@/components/posts/PostsTable";
 import { postStatuses } from "@/data/postStatuses";
 import { File, PlusCircle } from "lucide-react";
-
+import { posts } from "@/data/posts";
 export default function PostsPage() {
   return (
     <>
@@ -21,7 +21,7 @@ export default function PostsPage() {
           <button className="inline-flex items-center rounded-md px-3 h-8 gap-1 text-sm font-medium border border-input bg-background ring-offset-background transition-colors hover:bg-accent">
             <File className="w-3.5 h-3.5" />
             <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-              Export
+              Import
             </span>
           </button>
           <button className="inline-flex items-center rounded-md px-3 h-8 gap-1 text-sm font-medium border border-input bg-adminPrimary text-adminPrimary-foreground hover:bg-adminPrimary/90">
@@ -33,7 +33,7 @@ export default function PostsPage() {
         </div>
       </div>
       <div>
-        <PostsTable offset={10} totalPosts={99} />
+        <PostsTable posts={posts} offset={10} totalPosts={99} />
       </div>
     </>
   );

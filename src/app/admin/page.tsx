@@ -1,7 +1,5 @@
-interface AdminPageProps {
-  children: React.ReactNode;
-}
-export default function AdminPage({ children }: AdminPageProps) {
+
+export default function AdminPage() {
   return (
     <main>
       <p>admin page</p>

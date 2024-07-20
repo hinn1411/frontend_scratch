@@ -1,8 +1,15 @@
-import { Home, BookText, Users2, LineChart, Settings } from "lucide-react";
+import {
+  Home,
+  BookText,
+  Users2,
+  LineChart,
+  Settings,
+  Tags,
+} from "lucide-react";
 import Link from "next/link";
-import { VercelLogo } from "../icons/icons";
 import NavItem from "./NavItem";
 import { adminPaths } from "@/utils/paths";
+import Image from "next/image";
 
 export default function Sidebar() {
   return (
@@ -11,9 +18,16 @@ export default function Sidebar() {
         {/* Logo */}
         <Link
           href={adminPaths.home()}
-          className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-adminPrimary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
+          className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-accent text-lg font-semibold text-accent-foreground md:h-8 md:w-8 md:text-base"
         >
-          <VercelLogo className="w-3 h-3 transition-all group-hover:scale-110" />
+          <Image
+            src="/images/logo.png"
+            alt="App logo"
+            width={16}
+            height={16}
+            className="object-scale-down transition-all group-hover:scale-110"
+          />
+          {/* <VercelLogo className="w-3 h-3 transition-all group-hover:scale-110" /> */}
           <span className="sr-only">Frontend Scratch Admin</span>
         </Link>
         <NavItem href={adminPaths.home()} label="Dashboard">
@@ -21,6 +35,9 @@ export default function Sidebar() {
         </NavItem>
         <NavItem href={adminPaths.allPosts()} label="Posts">
           <BookText className="h-5 w-5" />
+        </NavItem>
+        <NavItem href={adminPaths.allTags()} label="Tags">
+          <Tags className="h-5 w-5" />
         </NavItem>
         <NavItem href={adminPaths.viewers()} label="Viewers">
           <Users2 className="h-5 w-5" />

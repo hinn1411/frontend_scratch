@@ -41,6 +41,9 @@ export const adminPaths = {
   allPosts() {
     return "/admin/posts";
   },
+  allTags() {
+    return "/admin/tags";
+  },
   viewPost(postId: string) {
     return `/admin/posts/${postId}`;
   },
