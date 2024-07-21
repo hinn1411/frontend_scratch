@@ -28,7 +28,7 @@ const PostsTable = ({ posts, offset, totalPosts }: PostsTableProps) => {
         <CardTitle>My Posts</CardTitle>
         <CardDescription>Managing posts</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="relative z-20">
         <Table>
           {/* Column names */}
           <TableHeader>
@@ -56,7 +56,7 @@ const PostsTable = ({ posts, offset, totalPosts }: PostsTableProps) => {
           </TableBody>
         </Table>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="relative z-10">
         <form className="flex items-center w-full justify-between">
           <div className="text-xs text-muted-foreground">
             Showing{" "}

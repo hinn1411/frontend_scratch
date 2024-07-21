@@ -43,48 +43,46 @@ export default function PostsRow({ post }: PostsRowProps) {
       <TableCell className="hidden md:table-cell">{post.createdAt}</TableCell>
       <TableCell className="hidden md:table-cell">{post.updatedAt}</TableCell>
       <TableCell>
-        <div ref={menuRef}>
-          <Menu as="div" className="relative inline-block">
-            <MenuButton
-              onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-accent"
-              aria-label="Post Action"
-            >
-              <MoreHorizontal className="w-4 h-4" />
-            </MenuButton>
-            <Transition
-              show={isMenuOpen}
-              as={Fragment}
-              enter="transition-all ease-out duration-300"
-              enterFrom="opacity-0 scale-95 translate-y-[-10px]"
-              enterTo="opacity-100 scale-100 translate-y-0"
-              leave="transition-all ease-in duration-200"
-              leaveFrom="opacity-100 scale-100 translate-y-0"
-              leaveTo="opacity-0 scale-95 translate-y-[10px]"
-            >
-              <MenuItems className="absolute flex flex-col text-sm right-0 mt-2 w-32 z-50 origin-top-right overflow-hidden rounded-md border bg-popover text-popover-foreground p-1 shadow-md">
-                <MenuItem>
-                  <p className="px-2 py-1.5 font-semibold">Actions</p>
-                </MenuItem>
-                <MenuItem>
-                  <button className="px-2 py-1.5 text-start hover:bg-accent hover:text-accent-foreground">
-                    Edit
-                  </button>
-                </MenuItem>
-                <MenuItem>
-                  <button className="px-2 py-1.5 text-start hover:bg-accent">
-                    Hide
-                  </button>
-                </MenuItem>
-                <MenuItem>
-                  <button className="px-2 py-1.5 text-start text-red-500 cursor-pointer hover:bg-accent ">
-                    Delete
-                  </button>
-                </MenuItem>
-              </MenuItems>
-            </Transition>
-          </Menu>
-        </div>
+        <Menu as="div" ref={menuRef} className="relative z-100 inline-block">
+          <MenuButton
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-accent"
+            aria-label="Post Action"
+          >
+            <MoreHorizontal className="w-4 h-4" />
+          </MenuButton>
+          <Transition
+            show={isMenuOpen}
+            as={Fragment}
+            enter="transition-all ease-out duration-300"
+            enterFrom="opacity-0 scale-95 translate-y-[-10px]"
+            enterTo="opacity-100 scale-100 translate-y-0"
+            leave="transition-all ease-in duration-200"
+            leaveFrom="opacity-100 scale-100 translate-y-0"
+            leaveTo="opacity-0 scale-95 translate-y-[10px]"
+          >
+            <MenuItems className="absolute z-100 flex flex-col text-sm right-0 mt-2 w-32 origin-top-right overflow-hidden rounded-md border bg-popover text-popover-foreground p-1 shadow-md">
+              <MenuItem>
+                <p className="px-2 py-1.5 font-semibold">Actions</p>
+              </MenuItem>
+              <MenuItem>
+                <button className="px-2 py-1.5 text-start hover:bg-accent hover:text-accent-foreground">
+                  Edit
+                </button>
+              </MenuItem>
+              <MenuItem>
+                <button className="px-2 py-1.5 text-start hover:bg-accent">
+                  Hide
+                </button>
+              </MenuItem>
+              <MenuItem>
+                <button className="px-2 py-1.5 text-start text-red-500 cursor-pointer hover:bg-accent ">
+                  Delete
+                </button>
+              </MenuItem>
+            </MenuItems>
+          </Transition>
+        </Menu>
       </TableCell>
     </TableRow>
   );

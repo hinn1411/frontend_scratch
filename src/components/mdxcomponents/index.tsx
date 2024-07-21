@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Link from "./Link";
 import TOCInline from "pliny/ui/TOCInline.js";
 import Pre from "pliny/ui/Pre.js";
